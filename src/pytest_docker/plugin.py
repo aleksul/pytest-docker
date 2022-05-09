@@ -121,7 +121,7 @@ class DockerComposeExecutor:
     _compose_project_name = attr.ib()
 
     def execute(self, subcommand):
-        command = "docker-compose"
+        command = "docker compose"
         for compose_file in self._compose_files:
             command += ' -f "{}"'.format(compose_file)
         command += ' -p "{}" {}'.format(self._compose_project_name, subcommand)
